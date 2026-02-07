@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Fashion | Women's Wear</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Royal Fashion</h1>
+    <p>Traditional & Modern Women's Wear</p>
+</header>
+
+<div class="info">
+    <p>📍 Sabzi Mandi, Raebareli – 229001</p>
+    <p>🕒 10:00 AM – 8:00 PM</p>
+    <p class="rating">★★★★★ 5.0 Rating</p>
+</div>
+
+<!-- FILTERS -->
+<section class="filters">
+    <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="suit">Suit</option>
+        <option value="plazo">Plazo</option>
+        <option value="plazoset">Plazo Set</option>
+    </select>
+
+    <select id="priceFilter">
+        <option value="all">All Prices</option>
+        <option value="low">Under ₹1000</option>
+        <option value="mid">₹1000 – ₹2000</option>
+        <option value="high">Above ₹2000</option>
+    </select>
+</section>
+
+<!-- PRODUCTS -->
+<section>
+<div class="gallery">
+
+<div class="product suit high">
+<img src="https://images.unsplash.com/photo-1620799139507-2c6d3d0c8e65">
+<h4>Blue Printed Suit</h4>
+<p>₹2,199</p>
+<a class="buy-btn" href="https://wa.me/917007928775?text=I%20want%20Blue%20Printed%20Suit">Buy Now</a>
+</div>
+
+<div class="product suit mid">
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
+<h4>Blue Ethnic Suit</h4>
+<p>₹1,799</p>
+<a class="buy-btn" href="https://wa.me/917007928775?text=I%20want%20Blue%20Ethnic%20Suit">Buy Now</a>
+</div>
+
+<div class="product suit high">
+<img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1">
+<h4>Maroon Suit</h4>
+<p>₹2,499</p>
+<a class="buy-btn" href="https://wa.me/917007928775?text=I%20want%20Maroon%20Suit">Buy Now</a>
+</div>
+
+<div class="product suit mid">
+<img src="https://images.unsplash.com/photo-1583391733956-6c78276477e1">
+<h4>Designer Maroon Suit</h4>
+<p>₹1,899</p>
+<a class="buy-btn" href="https://wa.me/917007928775?text=I%20want%20Designer%20Maroon%20Suit">Buy Now</a>
+</div>
+
+<div class="product plazo low">
+<img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6">
+<h4>White Plazo</h4>
+<p>₹799</p>
+<a class="buy-btn" href="https://wa.me/917007928775?text=I%20want%20White%20Plazo">Buy Now</a>
+</div>
+
+<div class="product plazo low">
+<img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990">
+<h4>Cotton White Plazo</h4>
+<p>₹899</p>
+<a class="buy-btn" href="https://wa.me/917007928775?text=I%20want%20Cotton%20White%20Plazo">Buy Now</a>
+</div>
+
+<div class="product plazoset high">
+<img src="https://images.unsplash.com/photo-1623844785662-5b3b6f8a1b8e">
+<h4>Golden Plazo Set</h4>
+<p>₹2,399</p>
+<a class="buy-btn" href="https://wa.me/917007928775?text=I%20want%20Golden%20Plazo%20Set">Buy Now</a>
+</div>
+
+<div class="product plazoset high">
+<img src="https://images.unsplash.com/photo-1603349136228-02b15a7e2e3c">
+<h4>Designer Golden Plazo Set</h4>
+<p>₹2,699</p>
+<a class="buy-btn" href="https://wa.me/917007928775?text=I%20want%20Designer%20Golden%20Plazo%20Set">Buy Now</a>
+</div>
+
+<div class="product plazo mid">
+<img src="https://images.unsplash.com/photo-1612423284934-2850f3d0a2d0">
+<h4>Stylish Plazo</h4>
+<p>₹1,299</p>
+<a class="buy-btn" href="https://wa.me/917007928775?text=I%20want%20Stylish%20Plazo">Buy Now</a>
+</div>
+
+<div class="product suit mid">
+<img src="https://images.unsplash.com/photo-1625225233840-695456021cde">
+<h4>Printed Suit</h4>
+<p>₹1,599</p>
+<a class="buy-btn" href="https://wa.me/917007928775?text=I%20want%20Printed%20Suit">Buy Now</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 Royal Fashion | Raebareli</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/917007928775">💬</a>
+
+<script>
+const category = document.getElementById("categoryFilter");
+const price = document.getElementById("priceFilter");
+const products = document.querySelectorAll(".product");
+
+function filterProducts() {
+    products.forEach(p => {
+        let catMatch = category.value === "all" || p.classList.contains(category.value);
+        let priceMatch = price.value === "all" || p.classList.contains(price.value);
+        p.style.display = (catMatch && priceMatch) ? "block" : "none";
+    });
+}
+category.addEventListener("change", filterProducts);
+price.addEventListener("change", filterProducts);
+</script>
+
+</body>
+</html>
